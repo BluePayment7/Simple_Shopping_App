@@ -7,10 +7,12 @@ import { Ingredient } from '../shared/ingredient.model';
   styleUrls: ['./shop-list.component.css'],
 })
 export class ShopListComponent implements OnInit {
-  ingredients: Ingredient[] = [
-    new Ingredient('Apples', 5),
-    new Ingredient('Tomatoes', 10),
-  ];
+  ingredients: Ingredient[] = [];
+
   constructor() {}
   ngOnInit() {}
+
+  onIngredientAdded(ingredient: Ingredient) {
+    this.ingredients.push(ingredient);
+  }
 }
